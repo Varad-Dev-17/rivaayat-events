@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    color: #221A15;
+    background-color: #FFFFFF;
+    overflow-x: hidden;
+  }
+
+  body {
+    background-color: #FFFFFF;
+    color: #221A15;
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  /* Lenis smooth scroll */
+  html.lenis, html.lenis body {
+    height: auto;
+  }
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+}
+
+/* Typography styles based on font guide */
+h1, .font-heading {
+  font-family: 'Bienvenido', 'Renatupath', 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+h2, h3, h4, .font-serif {
+  font-family: 'Bienvenido', 'Renatupath', 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+}
+
+/* Image 1 arch cutout (Large rounded arch at top right or all corners) */
+.rounded-rangoli-hero {
+  border-top-left-radius: 28px;
+  border-top-right-radius: 72px;
+  border-bottom-left-radius: 28px;
+  border-bottom-right-radius: 28px;
+}
+
+.rounded-rangoli-card {
+  border-radius: 20px;
+}
+
+/* Subtle Golden Rangoli Henna Pattern watermark (pure white background) */
+.bg-rangoli-pattern {
+  background-color: #FFFFFF;
+  background-image: radial-gradient(rgba(229, 168, 75, 0.12) 1.5px, transparent 1.5px),
+                    radial-gradient(rgba(242, 206, 152, 0.08) 1.5px, #FFFFFF 1.5px);
+  background-size: 32px 32px;
+  background-position: 0 0, 16px 16px;
+}
+
+/* Warm Golden Rangoli Border Accent like Image 1 frame */
+.border-rangoli-frame {
+  border: 1px solid #EFE3D0;
+  box-shadow: 0 4px 25px rgba(229, 168, 75, 0.06);
+}
+
+/* Amber Golden Button matching Image 1: 'Start planning now' */
+.btn-rangoli {
+  background-color: #E5A84B;
+  color: #FFFFFF;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 12px 28px;
+  border-radius: 8px;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 8px rgba(229, 168, 75, 0.25);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-rangoli:hover {
+  background-color: #D49333;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(229, 168, 75, 0.35);
+}
+
+.btn-rangoli-outline {
+  background-color: transparent;
+  color: #221A15;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 12px 28px;
+  border-radius: 8px;
+  border: 1px solid #E5A84B;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-rangoli-outline:hover {
+  background-color: #FFFDF9;
+  border-color: #D49333;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #FFFFFF;
+}
+::-webkit-scrollbar-thumb {
+  background: #E5A84B;
+  border-radius: 3px;
+}
