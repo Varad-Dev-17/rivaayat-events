@@ -56,7 +56,7 @@ export const HeroSection: React.FC = () => {
           className="absolute -inset-6 w-[calc(100%+3rem)] h-[calc(100%+3rem)] will-change-transform"
         >
           <img
-            src="https://images.unsplash.com/photo-1707358630022-ffebd93380c2?q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
+            src="https://images.unsplash.com/photo-1599318011235-904154a09c36?q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
             alt="RIVAAYAT Luxury Indian Event Management"
             className="w-full h-full object-cover object-center"
             loading="eager"
@@ -79,25 +79,49 @@ export const HeroSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Hero Content aligned to max-w-7xl */}
+        {/* Hero Content aligned to max-w-7xl with shadow ONLY on text */}
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          <div ref={contentRef} className="max-w-2xl">
-            <span className="text-xs uppercase tracking-wider text-amber-300 font-bold block mb-2.5">
+          <div ref={contentRef} className="max-w-2xl relative">
+            {/* Localized soft ambient shadow strictly behind the text area */}
+            <div 
+              className="absolute -inset-6 sm:-inset-8 -z-10 rounded-3xl pointer-events-none opacity-80"
+              style={{
+                background: 'radial-gradient(ellipse at 30% 50%, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.3) 50%, transparent 80%)',
+                filter: 'blur(12px)',
+              }}
+            />
+
+            <span 
+              className="text-xs uppercase tracking-wider text-amber-300 font-bold block mb-2.5"
+              style={{
+                textShadow: '0 2px 4px rgba(0, 0, 0, 0.95), 0 4px 8px rgba(0, 0, 0, 0.9)',
+              }}
+            >
               Corporate Foundation Days • Weddings • Birthday Parties • Concerts
             </span>
 
-            <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white font-normal leading-[1.12] mb-3 drop-shadow-[0_2px_12px_rgba(0,0,0,0.85)]">
+            <h1 
+              className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white font-normal leading-[1.12] mb-3"
+              style={{
+                textShadow: '0 2px 4px rgba(0, 0, 0, 0.95), 0 4px 16px rgba(0, 0, 0, 0.9), 0 8px 32px rgba(0, 0, 0, 0.85)',
+              }}
+            >
               Crafting Extraordinary Events Across India
             </h1>
 
-            <p className="text-base sm:text-lg text-white font-normal leading-relaxed mb-7 drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)] font-sans max-w-[55ch]">
+            <p 
+              className="text-base sm:text-lg text-white font-medium leading-relaxed mb-7 font-sans max-w-[55ch]"
+              style={{
+                textShadow: '0 1px 3px rgba(0, 0, 0, 0.95), 0 2px 10px rgba(0, 0, 0, 0.9), 0 4px 20px rgba(0, 0, 0, 0.85)',
+              }}
+            >
               Turnkey event management and production. We handle stage design, lighting, concert audio, gourmet catering, and guest hospitality from concept to seamless execution.
             </p>
 
             <div className="flex flex-wrap items-center gap-3.5">
               <button
                 onClick={() => scrollToSection('contact')}
-                className="btn-rangoli shadow-lg"
+                className="btn-rangoli shadow-xl"
               >
                 <span>Plan Your Event</span>
                 <ArrowRight className="w-4 h-4" />
@@ -105,7 +129,8 @@ export const HeroSection: React.FC = () => {
 
               <button
                 onClick={() => scrollToSection('services')}
-                className="px-5 py-3 rounded-lg text-sm font-medium text-white bg-white/20 hover:bg-white/35 backdrop-blur-md border border-white/60 shadow-lg transition-all"
+                className="px-5 py-3 rounded-lg text-sm font-medium text-white bg-black/40 hover:bg-black/60 backdrop-blur-md border border-white/60 shadow-xl transition-all"
+                style={{ textShadow: '0 1px 2px rgba(0, 0, 0, 0.8)' }}
               >
                 <span>Explore Services</span>
               </button>
